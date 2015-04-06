@@ -12,6 +12,7 @@
     <modules>
         <module>necat-core</module>
         <module>necat-test</module>
+        <module>necat-model</module>
     </modules>
 
     <build>
