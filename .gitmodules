@@ -1,0 +1,6 @@
+[submodule "necat-core"]
+	path = necat-core
+	url = https://github.com/kobofare/necat-core.git
+[submodule "necat-test"]
+	path = necat-test
+	url = https://github.com/kobofare/necat-test.git
