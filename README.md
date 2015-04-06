@@ -1,4 +1,7 @@
 # necat
+# how to edit README.md file
+please follow as: https://github.com/LearnShare/Learning-Markdown/blob/master/README.md
+
 # how to create a maven project and push the project to remote github.
 please follow as: http://blog.sonatype.com/2009/09/maven-tips-and-tricks-using-github/#.VSAJS2CSw8o
 
