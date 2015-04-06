@@ -10,9 +10,9 @@
     <url>http://maven.apache.org</url>
 
     <modules>
+        <module>necat-model</module>
         <module>necat-core</module>
         <module>necat-test</module>
-        <module>necat-model</module>
     </modules>
 
     <build>
@@ -25,7 +25,6 @@
                     <source>7</source>
                     <target>7</target>
                     <encoding>UTF-8</encoding>
-                    <!-- <compilerArgument>-g:none</compilerArgument> -->
                 </configuration>
             </plugin>
         </plugins>
