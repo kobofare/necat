@@ -1,5 +1,8 @@
 # Cache files, generates by Zephir
-target
+
+.project
+.settings
+
 .temp/
 .libs/
 
