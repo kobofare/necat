@@ -12,8 +12,6 @@
 
     <artifactId>necat-core</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
-
     <dependencies>
         <dependency>
             <groupId>org.apache.thrift</groupId>
