@@ -1,5 +1,5 @@
 # Necat
-Necat is similar to the Nifty which is an implementation of Thrift client and server on Netty, but Necat is based on Netty 4.0. Necat is in pursuit of higher performance and easier use for developing distribute system, it will try to use UDT and Protocbuf to optimize the communication part of application.
+Necat is similar to the Nifty which is an implementation of Thrift client and server on Netty, but Necat is based on Netty 4.0. Necat is in pursuit of higher performance and easier use for developing distribution system, it will try to use UDT and Protocbuf to optimize the communication part of application.
 
 # How to edit README.md file?
 Please follow as: https://github.com/LearnShare/Learning-Markdown/blob/master/README.md
