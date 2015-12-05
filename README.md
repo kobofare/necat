@@ -4,10 +4,10 @@ Necat is similar to the Nifty which is an implementation of Thrift client and se
 # How to edit README.md file?
 Please follow as: https://github.com/LearnShare/Learning-Markdown/blob/master/README.md
 
-# how to create a mavne project quickly?
+# How to create a mavne project quickly?
 mvn archetype:generate -DgroupId=necat -DartifactId=necat-model -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 
-# how to push a maven project to remote github?
+# How to push a maven project to remote github?
 Please follow as: http://blog.sonatype.com/2009/09/maven-tips-and-tricks-using-github/#.VSAJS2CSw8o
 
 If you want to add maven project to github repository, you can follow as:<br />
@@ -23,3 +23,11 @@ If you want to add maven project to github repository, you can follow as:<br />
 # How to config maven module?
 Please follow as: http://books.sonatype.com/mvnex-book/reference/multimodule-sect-simple-parent.html
 
+
+# If you wanna change the remote url, you can use command like this:
+For example, we want to use the git over ssh for necat-core:
+     git remote -v # check the remote position
+     git remote set-url origin git@github.com:kobofare/necat-core.git
+For example, we want to use the git over https for necat-core:
+     git remote -v # check the remote position
+     git remote set-url origin https://github.com/kobofare/necat-core.git
