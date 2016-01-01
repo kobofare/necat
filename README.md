@@ -25,9 +25,9 @@ Please follow as: http://books.sonatype.com/mvnex-book/reference/multimodule-sec
 
 
 # If you wanna change the remote url, you can use command like this:
-For example, we want to use the git over ssh for necat-core:
-     git remote -v # check the remote position
-     git remote set-url origin git@github.com:kobofare/necat-core.git
-For example, we want to use the git over https for necat-core:
-     git remote -v # check the remote position
-     git remote set-url origin https://github.com/kobofare/necat-core.git
+For example, we want to use the git over ssh for necat-core:<br />
+     git remote -v # check the remote position<br />
+     git remote set-url origin git@github.com:kobofare/necat-core.git<br />
+For example, we want to use the git over https for necat-core:<br />
+     git remote -v # check the remote position<br />
+     git remote set-url origin https://github.com/kobofare/necat-core.git<br />
