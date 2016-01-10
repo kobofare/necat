@@ -4,9 +4,6 @@
 [submodule "necat-test"]
 	path = necat-test
 	url = https://github.com/kobofare/necat-test.git
-[submodule "netty"]
-	path = netty
-	url = https://github.com/netty/netty.git
 [submodule "necat-model"]
 	path = necat-model
 	url = https://github.com/kobofare/necat-model.git
