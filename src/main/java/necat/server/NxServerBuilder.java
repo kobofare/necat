@@ -1,9 +1,9 @@
 package necat.server;
 
+import necat.channel.NxChannelImpl;
+import necat.configuration.NxChannelConfiguration;
 import necat.exception.NxIOException;
-import necat.share.NxChannelImpl;
 import necat.share.NxChannelInitializer;
-import necat.share.NxConfiguration;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
@@ -17,9 +17,9 @@ import io.netty.handler.logging.LoggingHandler;
 
 public class NxServerBuilder {
     private final ChannelInitializer<SocketChannel> initializer;
-    private final NxConfiguration configuration;
+    private final NxChannelConfiguration configuration;
 
-    public NxServerBuilder(NxConfiguration configuration, ChannelInitializer<SocketChannel> initializer) {
+    public NxServerBuilder(NxChannelConfiguration configuration, ChannelInitializer<SocketChannel> initializer) {
         this.configuration = configuration;
         this.initializer = initializer;
     }
@@ -34,7 +34,6 @@ public class NxServerBuilder {
         bootstrap.handler(new LoggingHandler(LogLevel.INFO));
         bootstrap.channel(NioServerSocketChannel.class);
         bootstrap.childHandler(initializer);
-
         Channel channel;
         try {
             channel = bootstrap.bind(address, port).sync().channel();

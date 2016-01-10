@@ -1,4 +1,4 @@
-package necat.share;
+package necat.channel;
 
 import io.netty.channel.Channel;
 

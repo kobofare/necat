@@ -7,10 +7,10 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import necat.channel.NxChannel;
+import necat.channel.NxChannelImpl;
+import necat.configuration.NxChannelConfiguration;
 import necat.exception.NxIOException;
-import necat.share.NxChannel;
-import necat.share.NxChannelImpl;
-import necat.share.NxConfiguration;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,10 +25,10 @@ import org.slf4j.LoggerFactory;
 public class NxClientFactory {
     private final static Logger logger = LoggerFactory.getLogger(NxClientFactory.class);
 
-    private final NxConfiguration configuration;
+    private final NxChannelConfiguration configuration;
     private final ChannelInitializer<SocketChannel> initializer;
 
-    public NxClientFactory(NxConfiguration configuration, ChannelInitializer<SocketChannel> initializer) {
+    public NxClientFactory(NxChannelConfiguration configuration, ChannelInitializer<SocketChannel> initializer) {
         this.configuration = configuration;
         this.initializer = initializer;
     }
@@ -52,5 +52,15 @@ public class NxClientFactory {
         NxChannel nxChannel = new NxChannelImpl(future.channel());
 
         return new NxClientImpl(nxChannel);
+    }
+    
+    public class NxChannelInitializer<A extends SocketChannel> extends ChannelInitializer<A> {
+
+        @Override
+        protected void initChannel(A ch) throws Exception {
+            // TODO Auto-generated method stub
+            
+        }
+        
     }
 }

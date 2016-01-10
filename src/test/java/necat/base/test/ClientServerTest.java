@@ -6,9 +6,11 @@ import org.junit.Test;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
+import io.netty.channel.ChannelConfig;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
+import io.netty.channel.socket.SocketChannelConfig;
 import necat.client.NxClient;
 import necat.client.NxClientFactory;
 import necat.server.NxServer;
@@ -33,20 +35,25 @@ public class ClientServerTest extends BaseTest {
         });
 
         NxServer server = builder.build(address, port);
-        final CountDownLatch latch = new CountDownLatch(1);
-        NxClientFactory clientFactory = new NxClientFactory(null, new ChannelInitializer<SocketChannel>() {
-            @Override
-            protected void initChannel(SocketChannel ch) throws Exception {
-                logger.info("client address: {}, remote address: {}", ch.localAddress(), ch.remoteAddress());
-                ChannelPipeline p = ch.pipeline();
-                p.addLast(new EchoClientHandler());
-                latch.countDown();
-            }
+        try {
+            final CountDownLatch latch = new CountDownLatch(1);
 
-        });
-        NxClient client = clientFactory.generate(address, port);
-        latch.await();
+            NxClientFactory clientFactory = new NxClientFactory(null, new ChannelInitializer<SocketChannel>() {
+                @Override
+                protected void initChannel(SocketChannel ch) throws Exception {
+                    logger.info("client address: {}, remote address: {}", ch.localAddress(), ch.remoteAddress());
+                    ChannelPipeline p = ch.pipeline();
+                    p.addLast(new EchoClientHandler());
+                    latch.countDown();
+                }
 
+            });
+            NxClient client = clientFactory.generate(address, port);
+            latch.await();
+        } catch (Exception e) {
+            logger.error("caught an excetpion ", e);
+            server.close();
+        }
         Thread.sleep(10000);
     }
 }

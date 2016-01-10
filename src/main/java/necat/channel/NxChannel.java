@@ -1,4 +1,4 @@
-package necat.share;
+package necat.channel;
 
 public interface NxChannel {
 

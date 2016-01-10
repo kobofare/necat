@@ -1,6 +1,6 @@
 package necat.client;
 
-import necat.share.NxChannel;
+import necat.channel.NxChannel;
 
 public class NxClientImpl implements NxClient {
     private final NxChannel nxChannel;
