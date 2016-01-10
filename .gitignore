@@ -5,6 +5,7 @@
 
 .temp/
 .libs/
+.recommenders/
 
 # Object files, generates by linker
 *.lo
